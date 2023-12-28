@@ -1,5 +1,5 @@
 import { configureStore,type Middleware } from "@reduxjs/toolkit";
-import usersReducer, { rollbackUser, UserWithId } from "./users/slice";
+import usersReducer, { rollbackUser, User, UserId, UserWithId } from "./users/slice";
 import { postUser,removeUser,updateUser } from "../services";
 
 const persitanceLocalStorageMiddleware : Middleware = (store) => (next) => (action) => {
@@ -7,8 +7,13 @@ const persitanceLocalStorageMiddleware : Middleware = (store) => (next) => (acti
     localStorage.setItem("store-state", JSON.stringify(store.getState()));
 }
 
+interface ActionWithPayload {
+    type: string;
+    payload: string & User & UserId & UserWithId;
+}
+
 const syncWithDatabaseMiddleware : Middleware = (store) => (next) => (action) => {
-    const { type, payload } = action;
+    const { type, payload } = action as ActionWithPayload;
     const previosState = store.getState();
     next(action);
 
