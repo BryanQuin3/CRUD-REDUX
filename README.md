@@ -14,14 +14,6 @@
 - TypeScript
 - [Tailwind CSS](https://tailwindcss.com/)
 
-## Instalación y Uso 🚦
-
-1. Clona el repositorio: `git clone https://github.com/tu_usuario/tu_proyecto.git`
-2. Instala las dependencias: `npm install`
-3. Inicia la aplicación: `npm start`
-
-¡Listo! Ahora puedes explorar y contribuir al proyecto.
-
 ## Contribuciones 🤝
 
 ¡Las contribuciones son bienvenidas! Si encuentras errores o tienes ideas para mejorar el proyecto, por favor crea una issue o envía un pull request.
